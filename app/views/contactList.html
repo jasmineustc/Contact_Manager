@@ -1,0 +1,39 @@
+
+<form class="form-horizontal" ng-controller="contactListController">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Contact Lists</h3>
+        </div>
+        <div class="panel-body">
+            <table id="contactListTable" class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat= "address in submittedAddresses">
+                        <td>
+                            <span class="btn btn-lg" ng-click="removeAddress(address)">
+                                <span class="glyphicon glyphicon-remove-sign"></span>
+                            </span>
+                        </td>
+                        <td class="text-primary col-sm-3" ng-click="editInfo(address)" >{{address.firstName + " " + address.lastName}}</td>
+                        <td>{{ address.email }}</td>
+                        <td>{{ address.phonenumber}}</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-0 col-sm-10">
+            <button type="button" ng-click="addContack()" class="btn btn-default">Add Contack</button>
+        </div>
+    </div>
+
+</form>
